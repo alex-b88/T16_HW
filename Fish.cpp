@@ -14,28 +14,27 @@ Fish::~Fish() {
 Fish::Fish(string name, bool type, float depth)
 : Enimal(name,type)
 {
-        this->depth=depth;
-}
-
-void Fish::setName(string name) {
-    if (name.length()>0)
-    this->name=name;
-}
-
-string Fish::getName() const {
-    return name;
-}
-
-void Fish::setType(bool x) {
-    this->type=x;
-}
-
-bool Fish::getType() const {
-    return type;
+    setDepth(depth);
 }
 
 void Fish::show() const {
     cout <<"Рыба" << endl;
-    cout <<"Глубина: " << depth << endl;
-    Enimal::show();
+    cout <<"Название: "<< name <<endl;
+    cout <<"Хищник: ";
+    if (type==true) cout <<"Да" <<endl;
+    else cout <<"Нет" <<endl;
+    cout <<"Глубина: " << depth <<"м" <<endl;
+}
+
+string Fish::getType1() const {
+    return "Fish";
+}
+
+void Fish::setDepth(float depth) {
+    if (depth>0)
+        this->depth=depth;
+}
+
+float Fish::getDepth() const {
+    return depth;
 }

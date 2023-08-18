@@ -14,13 +14,11 @@ public:
     Fish(string name, bool type, float depth);
     ~Fish() override;
 
-    void setName(string name);
-    string getName()const;
-
-    void setType(bool x);
-    bool getType()const;
+    void setDepth(float depth);
+    float getDepth()const;
 
     void show()const override;
+    string getType1()const override;
 
 };
 

@@ -23,6 +23,7 @@ public:
     bool getType()const;
 
     virtual void show()const;
+    virtual string getType1()const;
 
 
 

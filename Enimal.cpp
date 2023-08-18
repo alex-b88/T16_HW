@@ -33,10 +33,14 @@ bool Enimal::getType() const {
 }
 
 void Enimal::show() const {
+    cout <<"Животное"<<endl;
     cout <<"Название: "<< name <<endl;
     cout <<"Хищник: ";
-    if (type==true) cout <<" Да" <<endl;
-    else cout <<" Нет" <<endl;
+    if (type==true) cout <<"Да" <<endl;
+    else cout <<"Нет" <<endl;
+}
 
+string Enimal::getType1() const {
+    return "Enimal";
 }
 

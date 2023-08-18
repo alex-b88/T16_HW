@@ -6,4 +6,5 @@ set(CMAKE_CXX_STANDARD 17)
 add_executable(T16_HW main.cpp
         Enimal.cpp
         Enimal.h
-        Fish.cpp)
+        Fish.cpp
+        Bird.cpp)
