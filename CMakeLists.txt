@@ -7,4 +7,5 @@ add_executable(T16_HW main.cpp
         Enimal.cpp
         Enimal.h
         Fish.cpp
-        Bird.cpp)
+        Bird.cpp
+        Beast.cpp)

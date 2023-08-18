@@ -2,7 +2,7 @@
 #include "Fish.h"
 
 Enimal::Enimal() {
-    name = "not set";
+    name = "не задано";
     type = false;
 }
 

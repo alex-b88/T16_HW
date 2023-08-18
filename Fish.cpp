@@ -2,8 +2,6 @@
 #include "Fish.h"
 
 Fish::Fish() {
-    name="not set";
-    type=false;
     depth=0;
 }
 

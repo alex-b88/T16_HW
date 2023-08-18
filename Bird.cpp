@@ -6,7 +6,7 @@ Bird::~Bird() {
 }
 
 Bird::Bird() {
-
+    fspeed=0;
 }
 
 Bird::Bird(string name, bool type, float fspeed)
