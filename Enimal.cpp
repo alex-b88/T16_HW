@@ -1,8 +1,9 @@
 #include "Enimal.h"
+#include "Fish.h"
 
 Enimal::Enimal() {
-    name="not set";
-    type=false;
+    name = "not set";
+    type = false;
 }
 
 Enimal::Enimal(string name, bool type) {
