@@ -16,8 +16,8 @@ public:
     void setArea(string area);
     string getArea()const;
 
-    virtual void show()const;
-    virtual string getType1()const;
+    void show()const override;
+    string getType1()const override;
 
 };
 

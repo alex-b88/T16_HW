@@ -10,4 +10,7 @@ add_executable(T16_HW main.cpp
         Bird.cpp
         Beast.cpp
         Aviary.cpp
-        Aviary.h)
+        Aviary.h
+        ZooException.h
+        PredatorException.h
+        MaxCapacityException.h)
