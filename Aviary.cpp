@@ -4,8 +4,8 @@
 Aviary::Aviary() {
     number+=number;
     current_capacity=0;
-    max_capacity=5;
-    isPreditor=false;
+    max_capacity=4;
+    isPredator=false;
 }
 
 Aviary::Aviary(int number, int max_capacity, int current_capacity) {
@@ -48,8 +48,38 @@ int Aviary::getCurrent_capacity() const {
 }
 
 void Aviary::addItemToCage(Enimal *obj) {
-    enimals.push_back(obj);
-    current_capacity+=1;
+    if (current_capacity == max_capacity)
+        throw new MaxCapacityException(obj->getName());
+    //если клетка пустая
+    else if (current_capacity == 0) {
+        enimals.push_back(obj);
+        current_capacity += 1;
+        if (obj->getType())
+            isPredator = true;
+    }
+    //если в клетке кто-то есть
+    else if (current_capacity > 0 && current_capacity < max_capacity) {
+            //если в клетке нет хищника и добавляем не хищника
+            if(!(isPredator) && !(obj->getType())) {
+                enimals.push_back(obj);
+                current_capacity += 1;
+            }
+            //если в клетке нет хищника и добавляем хищника или есть хищник и добавляем не хищника
+            else if((!(isPredator) && obj->getType()) || (isPredator && !(obj->getType())) ){
+                throw new PredatorException(obj->getName());
+            }
+            //если в клетке есть хищник и добавляем хищника
+            else if(isPredator && obj->getType()){
+                enimals.push_back(obj);
+                current_capacity += 1;
+            }
+    }
+
+    else if (current_capacity > 0 && current_capacity < max_capacity && isPredator && obj->getType()){
+        enimals.push_back(obj);
+        current_capacity += 1;
+
+    }
 }
 
 void Aviary::findItem() {
@@ -96,7 +126,7 @@ void Aviary::showAllfromTheCage() const {
         cout <<"Клетка пустая"<<endl;
         return;
     }
-    cout <<"Вольера №" << number <<". Список животных:"<<endl;
+    cout <<"Вольер №" << number <<". Список животных:"<<endl;
     for (int i = 0; i < enimals.size(); ++i) {
         enimals[i]->show();
     }

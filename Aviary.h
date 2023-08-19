@@ -4,6 +4,7 @@
 #include "vector"
 #include "algorithm"
 #include "Enimal.h"
+#include "ZooException.h"
 
 class Aviary {
 protected:
@@ -11,7 +12,7 @@ protected:
     int max_capacity;
     int current_capacity;
     vector<Enimal*>enimals;
-    bool isPreditor;
+    bool isPredator;
 public:
     Aviary();
     Aviary(int number, int max_capacity, int current_capacity);
