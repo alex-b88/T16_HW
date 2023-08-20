@@ -8,7 +8,7 @@
 
 class Aviary {
 protected:
-    int number=0;
+    static int number;
     int max_capacity;
     int current_capacity;
     vector<Enimal*>enimals;

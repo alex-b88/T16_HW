@@ -8,12 +8,19 @@ PredatorException::PredatorException(string enimal_name)
     :ZooException(enimal_name) {}
 
 string PredatorException::showMessage() {
-    return "Predator Exception: " + enimal_name;
+    return "Внимание! Хищник!";
 }
 
 MaxCapacityException::MaxCapacityException(string enimal_name)
 : ZooException(enimal_name) {}
 
 string MaxCapacityException::showMessage() {
-    return "Max Capacity" + enimal_name;
+    return "Невозможно добавить " + enimal_name + ". Клетка заполнена\n";
+}
+
+NameExeption::NameExeption(string notice)
+: ZooException(notice) {}
+
+string NameExeption::showMessage() {
+    return "Невозможно создать животное! Не указано имя\n";
 }

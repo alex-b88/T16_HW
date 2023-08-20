@@ -17,6 +17,10 @@ Enimal::~Enimal() {
 
 void Enimal::setName(string name) {
 
+    if(name.length()<=0)
+    {
+        throw new NameExeption(name);
+    }
     this->name=name;
 }
 

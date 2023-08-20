@@ -29,4 +29,10 @@ public:
     string showMessage() override;
 };
 
+class NameExeption : public ZooException{
+public:
+    NameExeption(string notice);
+    string showMessage() override;
+};
+
 #endif //T16_HW_ZOOEXCEPTION_H

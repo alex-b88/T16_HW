@@ -3,6 +3,7 @@
 #define T16_HW_ENIMAL_H
 #include "iostream"
 #include "string"
+#include "ZooException.h"
 
 using namespace std;
 

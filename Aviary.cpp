@@ -2,9 +2,9 @@
 #include "Aviary.h"
 
 Aviary::Aviary() {
-    number+=number;
+    number++;
     current_capacity=0;
-    max_capacity=4;
+    max_capacity=5;
     isPredator=false;
 }
 
@@ -93,9 +93,10 @@ void Aviary::findItem() {
     cout <<"Введите название животного: ";
     getline(cin,tmp);
     for (int i = 0; i <enimals.size(); ++i) {
-        if (enimals[i]->getName()==tmp)
+        if (enimals[i]->getName()==tmp){
             enimals[i]->show();
         flag=true;
+        }
     }
     if (!flag) cout <<"Такого животного нету в этой клетке"<<endl;
 }
@@ -107,17 +108,20 @@ void Aviary::delItemFromCage() {
         return;
     }
     string tmp;
+    bool flag = false;
     cout <<"Введите название животного: ";
     getline(cin,tmp);
     for (int i = 0; i <enimals.size(); ++i) {
         if (enimals[i]->getName()==tmp)
         {
+            cout <<enimals[i]->getName()<<" успешно удалена из клетки!"<< endl;
             delete enimals[i];
             enimals.erase(enimals.begin() + i);
             current_capacity-=1;
+            flag=true;
         }
     }
-
+    if (!flag) cout <<"Такого животного в этой клетке нету!" << endl;
 }
 
 void Aviary::showAllfromTheCage() const {
